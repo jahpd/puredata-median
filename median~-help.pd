@@ -1,0 +1,42 @@
+#N canvas 516 169 593 404 10;
+#X msg 171 82 32;
+#N canvas 0 24 450 300 (subpatch) 0;
+#X array tab1 64 float 0;
+#X coords 0 1 63 -1 200 140 1;
+#X restore 373 26 graph;
+#X obj 245 45 tabwrite~ tab1;
+#N canvas 0 24 450 300 (subpatch) 0;
+#X array tab2 64 float 0;
+#X coords 0 1 63 -1 200 140 1;
+#X restore 374 189 graph;
+#X obj 243 171 tabwrite~ tab2;
+#X obj 18 198 dac~;
+#X msg 37 240 \; pd dsp 1;
+#X msg 37 278 \; pd dsp 0;
+#X obj 227 -4 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 17 118 median~ 32;
+#X msg 136 83 16;
+#X msg 101 83 8;
+#X msg 70 83 7;
+#X msg 35 83 4;
+#X msg 208 83 64;
+#X obj 17 5 osc~ 395;
+#X floatatom 51 47 5 0 0 0 - - -;
+#X text 15 318 median~ \; Constructor parameter or passive inlets is
+the number of samples to be considered in median limited by the block
+size \; Developed by flavio schiavoni to Alexandre Torres Porres;
+#X connect 0 0 9 1;
+#X connect 8 0 2 0;
+#X connect 8 0 4 0;
+#X connect 9 0 4 0;
+#X connect 9 0 5 0;
+#X connect 9 0 5 1;
+#X connect 10 0 9 1;
+#X connect 11 0 9 1;
+#X connect 12 0 9 1;
+#X connect 13 0 9 1;
+#X connect 14 0 9 1;
+#X connect 15 0 2 0;
+#X connect 15 0 9 0;
+#X connect 16 0 9 1;
